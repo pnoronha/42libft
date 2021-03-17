@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 20:17:22 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/11 21:17:25 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:34:23 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	src_len;
 
-	src_len = ft_strlen(*src);
+	src_len = ft_strlen(src);
 	if ((src_len + 1) < dstsize)
 	{
 		ft_memcpy(dst, src, (src_len + 1));
