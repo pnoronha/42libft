@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_char_in_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 17:16:02 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/17 14:13:27 by pnoronha         ###   ########.fr       */
+/*   Created: 2021/03/17 15:16:06 by pnoronha          #+#    #+#             */
+/*   Updated: 2021/03/17 15:42:42 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+int		ft_char_in_str(char c, const char *str)
 {
-	char	*sub_str;
-	size_t	i;
-
-	if (!(sub_str = malloc(sizeof(char) * len)))
-		return (NULL);
-	i = 0;
-	while (s[star + i] != '\0' && i < len)
+	while (*str)
 	{
-		sub_str[i] = s[start + i];
-		i++;
+		if (str == c)
+			return (1);
+		str++;
 	}
-	return (sub_str);
+	return (0);
 }

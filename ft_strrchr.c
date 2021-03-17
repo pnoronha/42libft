@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 11:50:13 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/15 12:49:59 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/17 13:58:46 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i--)
 	{
 		if (s[i] == (char)c)
-			return((char *)s + i);
+			return ((char *)s + i);
 	}
 	return (NULL);
 }

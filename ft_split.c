@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 17:16:02 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/17 14:13:27 by pnoronha         ###   ########.fr       */
+/*   Created: 2021/03/17 15:43:29 by pnoronha          #+#    #+#             */
+/*   Updated: 2021/03/17 16:29:38 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	**ft_split(const char *s, char c)
 {
-	char	*sub_str;
-	size_t	i;
+	char	**arr_str;
+	char	*str;
 
-	if (!(sub_str = malloc(sizeof(char) * len)))
-		return (NULL);
-	i = 0;
-	while (s[star + i] != '\0' && i < len)
-	{
-		sub_str[i] = s[start + i];
-		i++;
-	}
-	return (sub_str);
 }

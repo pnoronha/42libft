@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:24 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/13 15:14:31 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/17 14:06:32 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				return ((char *)big + i);
 			}
 			j++;
-
 		}
 		i++;
 	}
