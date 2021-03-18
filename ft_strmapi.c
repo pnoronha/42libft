@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 18:45:10 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/18 16:21:48 by pnoronha         ###   ########.fr       */
+/*   Created: 2021/03/18 14:25:56 by pnoronha          #+#    #+#             */
+/*   Updated: 2021/03/18 16:13:14 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*ptr_dst;
-	unsigned char	*ptr_src;
-	size_t			i;
+	char			*new_str;
+	unsigned int	i;
 
-	ptr_dst = (unsigned char *)dst;
-	ptr_src = (unsigned char *)src;
 	i = 0;
-	while (i < n && ptr_src[i])
+	if (!(new_str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	while (s[i])
 	{
-		ptr_dst[i] = ptr_src[i];
-		if (ptr_src[i] == (unsigned char)c)
-			return ((void *)(dst + i + 1));
+		f(ft_isalpha(s[i]), s[i]);
 		i++;
 	}
-	return (NULL);
+	return (new_str);
 }

@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 20:11:21 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/11 20:14:32 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:25:22 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ size_t		ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s)
+	while (*s)
 	{
 		len++;
+		s++;
 	}
 	return (len);
 }

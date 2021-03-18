@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:02:40 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/17 13:58:00 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/18 17:52:13 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	else
 	{
-		ft_memcpy(dst + dst_len, src, dstsize - 1);
+		ft_memcpy(dst + dstsize, src, dstsize - 1);
 		dst[dst_len + dstsize - 1] = '\0';
 	}
 	return (dst_len + src_len);

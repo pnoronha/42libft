@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:43:29 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/17 18:47:33 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:10:56 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static int		ft_nbr_strs(const char *s, char c)
 	unsigned int	i;
 	unsigned int	nbr_strs;
 
+	nbr_strs = 0;
 	if (!s[0])
 		return (0);
 	i = 0;
