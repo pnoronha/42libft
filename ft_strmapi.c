@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 14:25:56 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/18 16:13:14 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:28:41 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		f(ft_isalpha(s[i]), s[i]);
+		new_str[i] = f(i, s[i]);
 		i++;
 	}
 	return (new_str);

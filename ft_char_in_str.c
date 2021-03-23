@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:16:06 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/17 15:42:42 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/21 16:45:42 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_char_in_str(char c, const char *str)
 {
 	while (*str)
 	{
-		if (str == c)
+		if (*str == c)
 			return (1);
 		str++;
 	}
