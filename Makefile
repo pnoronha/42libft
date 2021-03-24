@@ -6,7 +6,7 @@
 #    By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 15:58:02 by pnoronha          #+#    #+#              #
-#    Updated: 2021/03/22 17:21:21 by pnoronha         ###   ########.fr        #
+#    Updated: 2021/03/24 11:12:40 by pnoronha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS	=	ft_memset.c \
 		ft_putstr.c \
 		ft_putendl.c \
 		ft_putnbr.c \
+		ft_strcpy.c \
 
 #	OBJECTS
 OBJS	=	${SRCS:.c=.o}
