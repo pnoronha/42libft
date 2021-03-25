@@ -6,7 +6,7 @@
 #    By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 15:58:02 by pnoronha          #+#    #+#              #
-#    Updated: 2021/03/24 11:12:40 by pnoronha         ###   ########.fr        #
+#    Updated: 2021/03/25 13:28:33 by pnoronha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,6 @@ SRCS	=	ft_memset.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_strnlen.c \
-		ft_char_in_str.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \

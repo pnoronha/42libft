@@ -6,13 +6,24 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:41:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/17 15:42:40 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/25 13:47:12 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+static int	ft_char_in_str(char c, const char *str)
+{
+	while (*str)
+	{
+		if (*str == c)
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
+char		*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	start;
 	size_t	end;
