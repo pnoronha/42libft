@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 10:29:31 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/24 10:29:31 by pnoronha         ###   ########.fr       */
+/*   Created: 2021/03/25 18:52:59 by pnoronha          #+#    #+#             */
+/*   Updated: 2021/03/25 18:55:33 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strcpy(char *dest, const char *src)
 	size_t	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;

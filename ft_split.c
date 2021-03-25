@@ -6,13 +6,13 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:43:29 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/18 16:10:56 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/25 18:56:29 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**ft_malloc_error(char **arr_str)
+static char			**ft_malloc_error(char **arr_str)
 {
 	unsigned int	i;
 
@@ -26,7 +26,7 @@ static char		**ft_malloc_error(char **arr_str)
 	return (NULL);
 }
 
-static void		ft_find_next_str(char **str, unsigned int *next_str_index,
+static void			ft_find_next_str(char **str, unsigned int *next_str_index,
 char c)
 {
 	unsigned int	i;
@@ -45,7 +45,7 @@ char c)
 	}
 }
 
-static int		ft_nbr_strs(const char *s, char c)
+static int			ft_nbr_strs(const char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	nbr_strs;
@@ -72,13 +72,13 @@ static int		ft_nbr_strs(const char *s, char c)
 	return (nbr_strs);
 }
 
-char		**ft_split(const char *s, char c)
+char				**ft_split(const char *s, char c)
 {
 	char			**arr_str;
 	char			*str;
 	unsigned int	next_str_index;
 	unsigned int	nbr_strs;
-	unsigned int 	i;
+	unsigned int	i;
 
 	if (!s)
 		return (NULL);
