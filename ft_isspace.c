@@ -6,16 +6,17 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 17:19:39 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/14 17:22:22 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/01 17:33:00 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\f' || c == '\r' ||
-		c == '\n' || c == '\t' || c == '\v')
+	if (c == ' ' || c == '\f' || c == '\r')
+		return (1);
+	if (c == '\n' || c == '\t' || c == '\v')
 		return (1);
 	else
 		return (0);

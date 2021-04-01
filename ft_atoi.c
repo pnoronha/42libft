@@ -6,13 +6,13 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 16:16:25 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/14 17:36:27 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/01 17:19:32 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;

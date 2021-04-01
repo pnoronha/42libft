@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_wordcnt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 19:49:55 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/01 17:23:09 by pnoronha         ###   ########.fr       */
+/*   Created: 2021/04/01 19:28:09 by pnoronha          #+#    #+#             */
+/*   Updated: 2021/04/01 19:37:31 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_wordcnt(const char *str, char c)
 {
-	unsigned char	*ptr_s1;
-	unsigned char	*ptr_s2;
+	int		i;
 
-	ptr_s1 = (unsigned char *)s1;
-	ptr_s2 = (unsigned char *)s2;
-	if (s1 == s2 || n == 0)
-		return (0);
-	while (n--)
-	{
-		if (*ptr_s1 != *ptr_s2)
-		{
-			return (*ptr_s1 - *ptr_s2);
-		}
-		if (n)
-		{
-			ptr_s1++;
-			ptr_s2++;
-		}
-	}
-	return (0);
+	i = 0;
+	while (*str)
+		if (str++ == c)
+			i++;
+	return (i);
 }

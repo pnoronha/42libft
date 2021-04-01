@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:41:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/31 00:44:28 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:28:36 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,27 @@ static int	ft_char_in_str(char c, const char *str)
 	return (0);
 }
 
-char		*ft_strtrim(const char *s1, const char *set)
+int	ft_index_to_skip(char *str, char set, int flag)
+{
+	int	i;
+
+	if (flag == 1)
+	{
+		i = 0;
+		while (str[i] && ft_char_in_str(str[i], set))
+			i++;
+	}
+	if (flag == 2)
+	{
+		i = ft_strlen(str) - 1;
+		if (i != -1)
+			while (i >= 0 && ft_char_in_str(str[i], set))
+				i--;
+	}
+	return (i);
+}
+
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	int				i;
 	unsigned int	str_size;
@@ -33,19 +53,14 @@ char		*ft_strtrim(const char *s1, const char *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	i = 0;
-	while (s1[i] && ft_char_in_str(s1[i], set))
-		i++;
-	str_start = (char *)&s1[i];
-	if ((i = ft_strlen(s1) - 1) != -1)
-		while (i >= 0 && ft_char_in_str(s1[i], set))
-			i--;
-	str_end = (char *)&s1[i];
+	str_start = (char *)&s1[ft_index_to_skip(s1, set, 1)];
+	str_end = (char *)&s1[ft_index_to_skip(s1, set, 2)];
 	if (!*s1 || str_end == str_start)
 		str_size = 2;
 	else
 		str_size = str_end - str_start + 2;
-	if (!(trimmed_str = malloc(sizeof(char) * str_size)))
+	trimmed_str = malloc(sizeof(char) * str_size);
+	if (trimmed_str == NULL)
 		return (NULL);
 	ft_strlcpy(trimmed_str, str_start, str_size);
 	return (trimmed_str);

@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:20:43 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/25 18:11:47 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/01 19:38:20 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putendl(char *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
+int		ft_wordcnt(const char *s, char c);
 
 #endif
