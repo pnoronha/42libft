@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:41:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/25 21:48:48 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/03/31 00:44:28 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 static int	ft_char_in_str(char c, const char *str)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == c)
+		if (*str == c)
 			return (1);
 		str++;
 	}
@@ -28,22 +25,28 @@ static int	ft_char_in_str(char c, const char *str)
 
 char		*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	start;
-	size_t	end;
-	size_t	i;
-	char	*trimmed_str;
+	int				i;
+	unsigned int	str_size;
+	char			*trimmed_str;
+	char			*str_start;
+	char			*str_end;
 
-	end = ft_strlen(s1);
-	start = 0;
-	while (s1[start] && ft_char_in_str(s1[start], set))
-		start++;
-	while (end > start && ft_char_in_str(s1[end], set))
-		end--;
-	if (!(trimmed_str = malloc(sizeof(char) * (end - start + 1))))
+	if (!s1 || !set)
 		return (NULL);
 	i = 0;
-	while (start < end)
-		trimmed_str[i++] = s1[start++];
-	trimmed_str[i] = '\0';
+	while (s1[i] && ft_char_in_str(s1[i], set))
+		i++;
+	str_start = (char *)&s1[i];
+	if ((i = ft_strlen(s1) - 1) != -1)
+		while (i >= 0 && ft_char_in_str(s1[i], set))
+			i--;
+	str_end = (char *)&s1[i];
+	if (!*s1 || str_end == str_start)
+		str_size = 2;
+	else
+		str_size = str_end - str_start + 2;
+	if (!(trimmed_str = malloc(sizeof(char) * str_size)))
+		return (NULL);
+	ft_strlcpy(trimmed_str, str_start, str_size);
 	return (trimmed_str);
 }
