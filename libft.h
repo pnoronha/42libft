@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:20:43 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/01 19:38:20 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/06 18:10:44 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -58,5 +65,8 @@ void	ft_putendl(char *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 int		ft_wordcnt(const char *s, char c);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 
 #endif

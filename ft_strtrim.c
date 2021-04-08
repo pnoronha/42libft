@@ -6,24 +6,24 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:41:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/01 18:28:36 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/02 20:53:59 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_char_in_str(char c, const char *str)
+static int	ft_char_in_str (const char str, const char *set)
 {
-	while (*str)
+	while (*set)
 	{
-		if (*str == c)
+		if (str == *set)
 			return (1);
-		str++;
+		set++;
 	}
 	return (0);
 }
 
-int	ft_index_to_skip(char *str, char set, int flag)
+int	ft_index_to_skip(const char *str, const char *set, int flag)
 {
 	int	i;
 
@@ -45,7 +45,6 @@ int	ft_index_to_skip(char *str, char set, int flag)
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	int				i;
 	unsigned int	str_size;
 	char			*trimmed_str;
 	char			*str_start;

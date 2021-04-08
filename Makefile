@@ -6,7 +6,7 @@
 #    By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 15:58:02 by pnoronha          #+#    #+#              #
-#    Updated: 2021/03/25 13:28:33 by pnoronha         ###   ########.fr        #
+#    Updated: 2021/04/06 18:10:40 by pnoronha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,19 +52,28 @@ SRCS	=	ft_memset.c \
 		ft_putendl.c \
 		ft_putnbr.c \
 		ft_strcpy.c \
+		ft_wordcnt.c \
 
 #	OBJECTS
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	$(SRCS:.c=.o)
+
+#	BONUS SOURCES
+BONUS	=	ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+
+#	BONUS OBJECTS
+B_OBJS	=	$(BONUS:.c=.o)
 
 #	LIBRARY
 NAME	=	libft.a
 
 #	COMPILER
-CC	=	gcc
+CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror
 
-RM	=	rm -f
+RM	 	=	rm -f
 
 $(NAME):	$(OBJS)
 		@ar rc $(NAME) $(OBJS)
@@ -72,7 +81,7 @@ $(NAME):	$(OBJS)
 		@ranlib $(NAME)
 		@echo ">>$(NAME) indexed<<\n"
 
-all:		${NAME}
+all:		$(NAME)
 
 .c.o:
 		@$(CC) $(CFLAGS) -c $< -o $@
@@ -85,10 +94,13 @@ fclean:		clean
 		@$(RM) $(NAME)
 		@echo ">>$(NAME) removed<<\n"
 
+bonus:		$(OBJS) $(B_OBJS)
+		@ar rc $(NAME) $(OBJS) $(B_OBJS)
+
 so:
 		$(CC) -fPIC $(CFLAGS) $(SRCS)
 		gcc -shared -o libft.so $(OBJS)
 
 re:		fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
