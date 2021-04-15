@@ -6,7 +6,7 @@
 #    By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 15:58:02 by pnoronha          #+#    #+#              #
-#    Updated: 2021/04/06 18:10:40 by pnoronha         ###   ########.fr        #
+#    Updated: 2021/04/15 18:28:42 by pnoronha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,12 @@ OBJS	=	$(SRCS:.c=.o)
 BONUS	=	ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
 #	BONUS OBJECTS
 B_OBJS	=	$(BONUS:.c=.o)
@@ -77,9 +83,9 @@ RM	 	=	rm -f
 
 $(NAME):	$(OBJS)
 		@ar rc $(NAME) $(OBJS)
-		@echo ">>$(NAME) created<<\n"
+		@echo ">> $(NAME) created <<\n"
 		@ranlib $(NAME)
-		@echo ">>$(NAME) indexed<<\n"
+		@echo ">> $(NAME) indexed <<\n"
 
 all:		$(NAME)
 
@@ -87,12 +93,12 @@ all:		$(NAME)
 		@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-		@$(RM) $(OBJS)
-		@echo ">>Objects removed<<\n"
+		@$(RM) $(OBJS) $(B_OBJS)
+		@echo ">> Objects removed <<\n"
 
 fclean:		clean
 		@$(RM) $(NAME)
-		@echo ">>$(NAME) removed<<\n"
+		@echo ">> $(NAME) removed <<\n"
 
 bonus:		$(OBJS) $(B_OBJS)
 		@ar rc $(NAME) $(OBJS) $(B_OBJS)

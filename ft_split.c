@@ -6,11 +6,13 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 00:47:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/05 17:52:17 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/14 16:28:41 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 static int	ft_wordlen(const char *s, char c)
 {
@@ -25,38 +27,44 @@ static int	ft_wordlen(const char *s, char c)
 	return (i);
 }
 
-static void	*ft_free_tab(char **tab, int i)
+static void	*ft_free_array(char **strs_array, int i)
 {
 	while (i >= 0)
 	{
-		free(tab[i--]);
+		free(strs_array[i--]);
 	}
 	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	char	**tab;
+	char	**strs_array;
 	int		nb_words;
 	int		i;
 
 	if (!s)
-		return (NULL);
+	{
+		strs_array = malloc(sizeof(char *));
+		if (!strs_array)
+			return (NULL);
+		*strs_array = (void *)NULL;
+		return (strs_array);
+	}
 	nb_words = ft_wordcnt(s, c);
-	tab = malloc(sizeof(char **) * (nb_words + 1));
-	if (!tab)
+	strs_array = malloc(sizeof(char *) * (nb_words + 1));
+	if (!strs_array)
 		return (NULL);
 	i = 0;
 	while (nb_words--)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		tab[i] = ft_substr(s, 0, ft_wordlen(s, c));
-		if (!tab[i])
-			return (ft_free_tab(tab, i));
+		strs_array[i] = ft_substr(s, 0, ft_wordlen(s, c));
+		if (!strs_array[i])
+			return (ft_free_array(strs_array, i));
 		s += ft_wordlen(s, c);
 		i++;
 	}
-	tab[i] = NULL;
-	return (tab);
+	strs_array[i] = NULL;
+	return (strs_array);
 }

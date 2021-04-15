@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:41:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/08 20:12:18 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/13 22:12:16 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,17 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!s1 || !set)
 		return (NULL);
 	str_start = (char *)&s1[ft_index_to_skip(s1, set, 1)];
-	str_end = (char *)&s1[ft_index_to_skip(s1, set, 2)];
-	str_size = str_end - str_start + 2;
-	trimmed_str = malloc(sizeof(char) * str_size);
+	if (s1[ft_index_to_skip(s1, set, 1)] == '\0')
+	{
+		str_size = 1;
+		trimmed_str = malloc(sizeof(char) * 1);
+	}
+	else
+	{
+		str_end = (char *)&s1[ft_index_to_skip(s1, set, 2)];
+		str_size = str_end - str_start + 2;
+		trimmed_str = malloc(sizeof(char) * str_size);
+	}
 	if (!trimmed_str)
 		return (NULL);
 	ft_strlcpy(trimmed_str, str_start, str_size);
