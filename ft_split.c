@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 00:47:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/14 16:28:41 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/21 14:34:14 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,7 @@ char	**ft_split(const char *s, char c)
 	int		i;
 
 	if (!s)
-	{
-		strs_array = malloc(sizeof(char *));
-		if (!strs_array)
-			return (NULL);
-		*strs_array = (void *)NULL;
-		return (strs_array);
-	}
+		return (NULL);
 	nb_words = ft_wordcnt(s, c);
 	strs_array = malloc(sizeof(char *) * (nb_words + 1));
 	if (!strs_array)

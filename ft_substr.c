@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 17:16:02 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/14 16:19:35 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/21 14:28:45 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (!sub_str)
 		return (NULL);
 	i = 0;
-	while (s[start + i] && i  < len)
+	while (s[start + i] && i < len)
 	{
 		sub_str[i] = s[start + i];
 		i++;
