@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:15:36 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/01 17:24:27 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/22 12:51:02 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1)
+		return (NULL);
+	if (!s2)
+		return (ft_strdup(s1));
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	new_str = malloc(sizeof(char) * (len_s1 + len_s2 + 1));

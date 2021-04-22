@@ -6,11 +6,10 @@
 #    By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 15:58:02 by pnoronha          #+#    #+#              #
-#    Updated: 2021/04/15 18:28:42 by pnoronha         ###   ########.fr        #
+#    Updated: 2021/04/22 13:21:12 by pnoronha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#	SOURCES
 SRCS	=	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
@@ -54,10 +53,8 @@ SRCS	=	ft_memset.c \
 		ft_strcpy.c \
 		ft_wordcnt.c \
 
-#	OBJECTS
 OBJS	=	$(SRCS:.c=.o)
 
-#	BONUS SOURCES
 BONUS	=	ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
@@ -68,13 +65,10 @@ BONUS	=	ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 
-#	BONUS OBJECTS
 B_OBJS	=	$(BONUS:.c=.o)
 
-#	LIBRARY
 NAME	=	libft.a
 
-#	COMPILER
 CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror
@@ -82,30 +76,35 @@ CFLAGS	=	-Wall -Wextra -Werror
 RM	 	=	rm -f
 
 $(NAME):	$(OBJS)
-		@ar rc $(NAME) $(OBJS)
-		@echo ">> $(NAME) created <<\n"
-		@ranlib $(NAME)
-		@echo ">> $(NAME) indexed <<\n"
+		@ar rcs $(NAME) $(OBJS)
+		@echo "\n=================================\n"
+		@echo ">> Library and Objects created <<\n"
+		@echo "=================================\n"
+		@echo "      >> $(NAME) INDEXED <<\n"
+		@echo "=================================\n"
 
 all:		$(NAME)
 
 .c.o:
-		@$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		@$(RM) $(OBJS) $(B_OBJS)
-		@echo ">> Objects removed <<\n"
+		@echo "\n=================================\n"
+		@echo "XXXXXXXX Objects removed XXXXXXXX\n"
+		@echo "=================================\n"
 
 fclean:		clean
 		@$(RM) $(NAME)
-		@echo ">> $(NAME) removed <<\n"
+		@echo "\n=================================\n"
+		@echo "XXXXXXXX $(NAME) removed XXXXXXXX\n"
+		@echo "=================================\n"
 
 bonus:		$(OBJS) $(B_OBJS)
-		@ar rc $(NAME) $(OBJS) $(B_OBJS)
-
-so:
-		$(CC) -fPIC $(CFLAGS) $(SRCS)
-		gcc -shared -o libft.so $(OBJS)
+		@ar rcs $(NAME) $(OBJS) $(B_OBJS)
+		@echo "\n=================================\n"
+		@echo "||       BONUS created         ||\n"
+		@echo "=================================\n"
 
 re:		fclean all
 

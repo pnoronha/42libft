@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:31:58 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/03/25 21:48:47 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/21 15:30:17 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	ptr_dst = (char *)dst;
 	ptr_src = (char *)src;
+	if (!dst && !src)
+		return (NULL);
 	while (n--)
 	{
 		ptr_dst[n] = ptr_src[n];

@@ -6,33 +6,53 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:47:47 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/21 14:58:16 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/21 20:14:05 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_number_len(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n < 0)
+	{
+		n = -n;
+		len++;
+	}
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
+	int		count;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	str = malloc(sizeof(char) * 2);
+	if (n == 0)
+		return (ft_strdup("0"));
+	count = ft_number_len(n);
+	str = malloc(sizeof(char) * (count + 1));
 	if (!str)
 		return (NULL);
+	str[count--] = '\0';
 	if (n < 0)
 	{
+		n = -n;
 		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else
+	while (n > 0)
 	{
-		str[0] = n + '0';
-		str[1] = '\0';
+		str[count--] = n % 10 + '0';
+		n /= 10;
 	}
 	return (str);
 }

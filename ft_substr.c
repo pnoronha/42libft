@@ -6,7 +6,7 @@
 /*   By: pnoronha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 17:16:02 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/04/21 14:28:45 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/04/21 15:45:05 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	min_lengh;
 	size_t	i;
 
-	str_lengh = ft_strlen(s);
-	min_lengh = ft_strlen(&s[start]);
 	if (!s)
 		return (NULL);
+	str_lengh = ft_strlen(s);
+	min_lengh = ft_strlen(&s[start]);
 	if (str_lengh <= start || len <= 0)
 		return (ft_strdup(""));
 	else if (len > min_lengh)
