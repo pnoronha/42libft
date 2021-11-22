@@ -6,7 +6,7 @@
 /*   By: pnoronha <pnoronha@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 13:19:26 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/11/22 19:18:03 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:54:25 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,22 @@ static int	check_base(const char *base)
 
 int	ft_putnbrbase(unsigned long nbr, const char *base)
 {
-	unsigned int	baseLen;
-	int	nbrLen;
+	unsigned int	base_len;
+	int				nbr_len;
 
 	if (!check_base(base))
 		return (0);
-	baseLen = ft_strlen(base);
-	nbrLen = 0;
-	if (nbr < baseLen)
+	base_len = ft_strlen(base);
+	nbr_len = 0;
+	if (nbr < base_len)
 	{
 		ft_putchar(base[nbr]);
-		nbrLen++;
+		nbr_len++;
 	}
 	else
 	{
-		nbrLen += ft_putnbrbase(nbr / baseLen, base);
-		nbrLen += ft_putnbrbase(nbr % baseLen, base);
+		nbr_len += ft_putnbrbase(nbr / base_len, base);
+		nbr_len += ft_putnbrbase(nbr % base_len, base);
 	}
-	return (nbrLen);
+	return (nbr_len);
 }

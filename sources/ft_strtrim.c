@@ -6,13 +6,13 @@
 /*   By: pnoronha <pnoronha@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:41:50 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/07/03 01:27:47 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:53:18 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int	ft_char_in_str (const char str, const char *set)
+static int	ft_char_in_str(const char str, const char *set)
 {
 	while (*set)
 	{
