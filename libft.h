@@ -6,7 +6,7 @@
 /*   By: pnoronha <pnoronha@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:20:43 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/08/07 11:53:03 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:15:38 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-int		ft_putnbrBase(unsigned long nbr, const char *base);
-int		ft_intLen(int n);
-int		ft_unsignedLen(unsigned int n);
+int		ft_putnbrbase(unsigned long nbr, const char *base);
+int		ft_intlen(int n);
+int		ft_unsignedlen(unsigned int n);
 int		ft_wordcnt(const char *s, char c);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

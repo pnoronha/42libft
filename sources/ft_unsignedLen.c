@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsignedLen.c                                   :+:      :+:    :+:   */
+/*   ft_unsignedlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnoronha <pnoronha@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 11:50:56 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/08/07 11:51:09 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:15:40 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_unsignedLen(unsigned int n)
+int	ft_unsignedlen(unsigned int n)
 {
 	int	len;
 

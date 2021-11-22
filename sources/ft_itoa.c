@@ -6,7 +6,7 @@
 /*   By: pnoronha <pnoronha@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:47:47 by pnoronha          #+#    #+#             */
-/*   Updated: 2021/08/07 11:52:01 by pnoronha         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:14:12 by pnoronha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	count = ft_intLen(n);
+	count = ft_intlen(n);
 	str = malloc(sizeof(char) * (count + 1));
 	if (!str)
 		return (NULL);
